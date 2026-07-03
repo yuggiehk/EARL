@@ -18,6 +18,10 @@
   <img src="assets/fig_2.png" width="95%" alt="EARL Architecture Overview" />
 </p>
 
+<p align="center">
+  <img src="assets/fig_3.png" width="70%" alt="AFS Architecture" />
+</p>
+
 ## 🔥 News
 
 - **[2026.05]** EARL is accepted at **ICML 2026**!
@@ -44,9 +48,6 @@ EARL adopts a **coarse-to-fine** design:
 
 To bridge the two stages, we introduce the **Analysis-guided Feature Synthesizer (AFS)**, which extracts a *global interaction descriptor* from the interpretation stage and injects it as a semantic prior into the response stage.
 
-<p align="center">
-  <img src="assets/fig_3.png" width="70%" alt="AFS Architecture" />
-</p>
 
 ## 🏗️ Project Structure
 
