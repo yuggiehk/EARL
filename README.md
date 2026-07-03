@@ -11,8 +11,11 @@
 > *International Conference on Machine Learning (ICML), 2026*
 
 <p align="center">
-  <img src="assets/fig_1.png" width="45%" alt="Radar chart comparison on Ego-IRGBench" />
-  <img src="assets/fig_2.png" width="45%" alt="EARL Architecture Overview" />
+  <img src="assets/fig_1.png" width="50%" alt="Radar chart comparison on Ego-IRGBench" />
+</p>
+
+<p align="center">
+  <img src="assets/fig_2.png" width="95%" alt="EARL Architecture Overview" />
 </p>
 
 ## 🔥 News

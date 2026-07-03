@@ -58,6 +58,7 @@ sam2/
 
 # WandB
 wandb/
+runs/
 
 # DeepSpeed configs
 deepspeed_*.json
