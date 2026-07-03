@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="EARL: Towards a Unified Analysis-Guided Reinforcement Learning Framework for Egocentric Interaction Reasoning and Pixel Grounding. Accepted at ICML 2026.">
+  <meta name="keywords" content="EARL, ICML 2026, egocentric vision, interaction reasoning, pixel grounding, GRPO, reinforcement learning, MLLM, visual grounding">
+  <meta name="author" content="Yuejiao Su, Xinshen Zhang, Zhen Ye, Lei Yao, Lap-Pui Chau, Yi Wang">
+  <meta property="og:title" content="EARL | ICML 2026">
+  <meta property="og:description" content="A unified analysis-guided reinforcement learning framework for egocentric interaction reasoning and pixel grounding.">
+  <meta property="og:image" content="fig_2.png">
+  <meta property="og:type" content="website">
+  <title>EARL | ICML 2026</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%231f4f99'/%3E%3Ctext x='50' y='63' font-size='42' text-anchor='middle' fill='white' font-family='Arial, Helvetica, sans-serif' font-weight='800'%3EE%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <div class="container narrow center">
+        <div class="venue-badge">ICML 2026</div>
+        <h1>EARL: Towards a Unified Analysis-Guided Reinforcement Learning Framework for Egocentric Interaction Reasoning and Pixel Grounding</h1>
+
+        <p class="authors">
+          <a href="https://dblp.org/pid/292/4226.html" target="_blank" rel="noopener">Yuejiao Su</a><sup>1</sup>,
+          <a href="https://scholar.google.com/citations?user=KsiOuO0AAAAJ&hl=zh-CN" target="_blank" rel="noopener">Xinshen Zhang</a><sup>1</sup>,
+          <a href="https://github.com/zhenye234" target="_blank" rel="noopener">Zhen Ye</a><sup>1</sup>,
+          <a href="https://rayyoh.github.io/" target="_blank" rel="noopener">Lei Yao</a><sup>2</sup>,
+          <a href="https://www.eie.polyu.edu.hk/~lpchau/" target="_blank" rel="noopener">Lap-Pui Chau</a><sup>1</sup>,
+          <a href="https://wangyintu.github.io/" target="_blank" rel="noopener">Yi Wang</a><sup>1</sup>
+        </p>
+        <p class="affiliations"><sup>1</sup>The Hong Kong Polytechnic University &nbsp;&nbsp; <sup>2</sup>The Hong Kong University of Science and Technology</p>
+
+        <div class="button-row">
+          <a class="button" href="checkpoints/earl_checkpoint_placeholder.pth" title="Model checkpoint placeholder; replace after uploading the checkpoint.">Model</a>
+          <a class="button" href="https://arxiv.org/abs/2605.14742">arXiv</a>
+          <a class="button" href="https://arxiv.org/pdf/2605.14742">PDF</a>
+          <a class="button" href="https://github.com/yuggiehk/EARL">Code</a>
+        </div>
+      </div>
+
+      <div class="container wide">
+        <figure class="figure-card hero-figure">
+          <img src="fig_2.png" alt="EARL overall framework" loading="eager">
+          <figcaption>
+            <strong>Figure 2.</strong> Overall architecture of EARL. The framework transfers coarse egocentric interaction analysis into query-oriented answering and pixel grounding.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container text-block">
+        <h2>Abstract</h2>
+        <p>
+          Understanding human&ndash;environment interactions from egocentric vision is essential for assistive robotics and embodied intelligent agents, yet existing multimodal large language models still struggle with accurate interaction reasoning and fine-grained pixel grounding. <strong>EARL</strong> introduces an Egocentric Analysis-guided Reinforcement Learning framework that explicitly transfers coarse interaction semantics to query-oriented answering and grounding.
+        </p>
+        <p>
+          EARL adopts a two-stage parsing framework: a coarse-grained interpretation stage holistically analyzes egocentric interactions and produces structured textual descriptions, while a fine-grained response stage generates textual answers and pixel-level masks for user queries. A global interaction descriptor is integrated through an Analysis-guided Feature Synthesizer, and heterogeneous outputs are optimized through a multi-faceted reward function with GRPO.
+        </p>
+      </div>
+    </section>
+
+    <section class="section soft-bg">
+      <div class="container text-block center">
+        <h2>Performance at a Glance</h2>
+        <p class="lead">
+          EARL improves egocentric interaction reasoning and fine-grained grounding on Ego-IRGBench and transfers to unseen egocentric grounding scenarios.
+        </p>
+      </div>
+      <div class="container stats-grid">
+        <div class="stat-card"><div class="stat-number">65.48%</div><div class="stat-label">cIoU on Ego-IRGBench test pixel grounding</div></div>
+        <div class="stat-card"><div class="stat-number">+8.37</div><div class="stat-label">cIoU gain over the second-best method on test</div></div>
+        <div class="stat-card"><div class="stat-number">38.21%</div><div class="stat-label">overall cIoU on OOD EgoHOS grounding</div></div>
+        <div class="stat-card"><div class="stat-number">+0.58</div><div class="stat-label">OOD cIoU gain over the second-best method</div></div>
+      </div>
+      <div class="container wide">
+        <figure class="figure-card">
+          <img src="fig_1.png" alt="Performance radar chart" loading="lazy">
+          <figcaption>
+            <strong>Figure 1.</strong> Performance radar chart comparing EARL with baseline methods across egocentric reasoning and grounding capabilities.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container text-block center">
+        <h2>Main Quantitative Results</h2>
+        <p class="lead">
+          EARL is evaluated on Ego-IRGBench with three complementary abilities: interaction analysis, query answering, and pixel-level grounding. <strong>Best</strong> results are bolded, and <span class="second">second-best</span> results are underlined.
+        </p>
+      </div>
+      <div class="container table-wide">
+        <div class="table-card">
+          <div class="table-scroll">
+            <table class="result-table">
+              <thead>
+                <tr>
+                  <th rowspan="2">Model</th>
+                  <th rowspan="2">Type</th>
+                  <th colspan="5">Test</th>
+                  <th colspan="5">Val</th>
+                </tr>
+                <tr>
+                  <th>Ana. M</th><th>Ana. C</th><th>Ans. M</th><th>Ans. C</th><th>cIoU</th>
+                  <th>Ana. M</th><th>Ana. C</th><th>Ans. M</th><th>Ans. C</th><th>cIoU</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="group-row"><td colspan="12">General-domain MLLMs</td></tr>
+                <tr><td>Qwen3-VL-4B</td><td>Gen</td><td>0.134</td><td>0.041</td><td class="second">0.882</td><td>4.945</td><td>22.84</td><td>0.136</td><td>0.045</td><td>0.882</td><td class="second">5.001</td><td>23.31</td></tr>
+                <tr><td>Qwen3-VL-8B</td><td>Gen</td><td>0.136</td><td>0.044</td><td class="second">0.882</td><td class="second">5.000</td><td>23.31</td><td>0.188</td><td>0.119</td><td class="second">0.898</td><td>4.540</td><td>24.05</td></tr>
+                <tr><td>Qwen2.5-VL-3B</td><td>Gen</td><td>0.158</td><td>0.071</td><td>0.627</td><td>2.423</td><td>12.44</td><td>0.158</td><td>0.071</td><td>0.627</td><td>2.416</td><td>12.51</td></tr>
+                <tr><td>Qwen2.5-VL-7B</td><td>Gen</td><td>0.206</td><td>0.119</td><td>0.739</td><td>2.477</td><td>23.71</td><td>0.204</td><td>0.119</td><td>0.729</td><td>2.417</td><td>22.46</td></tr>
+                <tr><td>InternVL2.5-7B</td><td>Gen</td><td>0.177</td><td>0.044</td><td>0.681</td><td>1.533</td><td>27.21</td><td>0.176</td><td>0.047</td><td>0.679</td><td>1.547</td><td>27.70</td></tr>
+                <tr class="group-row"><td colspan="12">Egocentric MLLMs</td></tr>
+                <tr><td>EgoThinker</td><td>Ego</td><td>0.182</td><td>0.061</td><td>0.491</td><td>2.344</td><td>12.33</td><td>0.184</td><td>0.065</td><td>0.495</td><td>2.364</td><td>12.87</td></tr>
+                <tr><td>ANNEXE*</td><td>Ego</td><td>0.536</td><td>1.423</td><td>0.350</td><td>2.317</td><td>31.90</td><td>0.537</td><td>1.447</td><td>0.352</td><td>2.312</td><td>31.72</td></tr>
+                <tr><td>ANNEXE</td><td>Ego</td><td class="best">0.563</td><td class="second">1.494</td><td>0.365</td><td>2.590</td><td>36.02</td><td class="best">0.563</td><td class="second">1.516</td><td>0.363</td><td>2.543</td><td>35.14</td></tr>
+                <tr class="group-row"><td colspan="12">Pixel-level Grounding MLLMs</td></tr>
+                <tr><td>Sa2VA-InternVL3-8B</td><td>Gen</td><td>0.207</td><td>0.192</td><td>0.486</td><td>2.309</td><td>31.17</td><td>0.280</td><td>0.198</td><td>0.489</td><td>2.320</td><td>37.97</td></tr>
+                <tr><td>Sa2VA-8B</td><td>Gen</td><td>0.188</td><td>0.115</td><td>0.754</td><td>2.656</td><td>32.69</td><td>0.189</td><td>0.120</td><td>0.448</td><td>2.644</td><td>34.89</td></tr>
+                <tr><td>UniPixel-7B</td><td>Gen</td><td>0.165</td><td>0.075</td><td>0.158</td><td>1.136</td><td>14.01</td><td>0.168</td><td>0.065</td><td>0.155</td><td>1.128</td><td>13.63</td></tr>
+                <tr class="group-row"><td colspan="12">Reinforcement Learning-based General Segmentation MLLMs</td></tr>
+                <tr><td>Seg-R1-3B</td><td>Gen</td><td>0.268</td><td>0.368</td><td>0.696</td><td>1.914</td><td>28.91</td><td>0.266</td><td>0.367</td><td>0.695</td><td>1.929</td><td>29.08</td></tr>
+                <tr><td>Seg-R1-7B</td><td>Gen</td><td>0.292</td><td>0.289</td><td>0.774</td><td>2.483</td><td>46.10</td><td>0.289</td><td>0.285</td><td>0.771</td><td>2.488</td><td>45.05</td></tr>
+                <tr><td>Seg-Zero</td><td>Gen</td><td>0.309</td><td>0.049</td><td>0.742</td><td>2.380</td><td class="second">57.11</td><td>0.310</td><td>0.052</td><td>0.740</td><td>2.349</td><td class="second">58.03</td></tr>
+                <tr class="ours-row"><td>EARL (Ours)</td><td>Ego</td><td class="second">0.542</td><td class="best">1.522</td><td class="best">0.939</td><td class="best">6.682</td><td class="best">65.48</td><td class="second">0.541</td><td class="best">1.520</td><td class="best">0.933</td><td class="best">6.610</td><td class="best">62.71</td></tr>
+                <tr class="ours-row"><td>vs. best / second-best</td><td>Δ</td><td class="diff">-0.021</td><td class="gain">+0.028</td><td class="gain">+0.057</td><td class="gain">+1.682</td><td class="gain">+8.37</td><td class="diff">-0.022</td><td class="gain">+0.004</td><td class="gain">+0.035</td><td class="gain">+1.609</td><td class="gain">+4.68</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="table-caption"><strong>Table 1.</strong> Comparison results on Ego-IRGBench test and validation sets.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft-bg">
+      <div class="container text-block center">
+        <h2>Out-of-Distribution Grounding</h2>
+        <p class="lead">
+          EARL generalizes to EgoHOS, an out-of-distribution egocentric hand-object segmentation setting. The table reports category-wise IoU and overall cIoU.
+        </p>
+      </div>
+      <div class="container table-wide">
+        <div class="table-card">
+          <div class="table-scroll">
+            <table class="result-table">
+              <thead>
+                <tr>
+                  <th>Method</th><th>Type</th><th>Left Hand</th><th>Right Hand</th><th>Left-hand Obj.</th><th>Right-hand Obj.</th><th>Two-hand Obj.</th><th>cIoU</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="group-row"><td colspan="8">Referring Image Segmentation Methods</td></tr>
+                <tr><td>X-Decoder</td><td>Gen</td><td>18.19</td><td>20.68</td><td>5.37</td><td>7.99</td><td>11.21</td><td>12.69</td></tr>
+                <tr><td>GSVA</td><td>Gen</td><td>20.69</td><td>23.18</td><td>5.37</td><td>7.79</td><td>9.02</td><td>13.21</td></tr>
+                <tr><td>GRES</td><td>Gen</td><td>20.49</td><td>22.98</td><td>7.22</td><td>8.64</td><td>10.87</td><td>14.04</td></tr>
+                <tr><td>LISA</td><td>Gen</td><td>28.93</td><td>33.06</td><td>14.27</td><td>17.94</td><td>18.10</td><td>22.46</td></tr>
+                <tr class="group-row"><td colspan="8">General-domain MLLMs</td></tr>
+                <tr><td>InternVL3-8B</td><td>Gen</td><td>12.78</td><td>9.97</td><td>4.65</td><td>0.06</td><td>3.09</td><td>6.11</td></tr>
+                <tr><td>Qwen2.5-VL-3B</td><td>Gen</td><td>5.95</td><td>23.54</td><td>0.18</td><td>0.54</td><td>0.47</td><td>6.14</td></tr>
+                <tr><td>Qwen3-VL-4B</td><td>Gen</td><td>15.68</td><td>9.16</td><td>5.79</td><td>4.24</td><td>6.83</td><td>8.34</td></tr>
+                <tr><td>Qwen2.5-VL-7B</td><td>Gen</td><td>23.20</td><td>16.45</td><td>4.74</td><td>5.82</td><td>12.58</td><td>12.56</td></tr>
+                <tr><td>Qwen3-VL-8B</td><td>Gen</td><td>30.70</td><td>27.75</td><td>14.16</td><td>20.53</td><td>26.61</td><td>23.95</td></tr>
+                <tr class="group-row"><td colspan="8">Egocentric MLLMs</td></tr>
+                <tr><td>EgoThinker</td><td>Ego</td><td>29.33</td><td>25.09</td><td>14.01</td><td>15.81</td><td>22.84</td><td>21.42</td></tr>
+                <tr><td>ANNEXE</td><td>Ego</td><td>25.84</td><td>26.21</td><td>16.24</td><td>15.86</td><td>22.75</td><td>21.38</td></tr>
+                <tr class="group-row"><td colspan="8">Pixel-level Grounding MLLMs</td></tr>
+                <tr><td>Sa2VA-8B</td><td>Pix</td><td class="second">48.56</td><td class="second">45.82</td><td class="second">26.91</td><td class="second">26.77</td><td class="second">37.04</td><td class="second">37.63</td></tr>
+                <tr><td>Sa2VA-InternVL3-8B</td><td>Pix</td><td>41.24</td><td>41.47</td><td>25.95</td><td>26.54</td><td class="best">37.45</td><td>34.08</td></tr>
+                <tr><td>UniPixel-7B</td><td>Pix</td><td>28.54</td><td>24.82</td><td>11.12</td><td>12.45</td><td>19.06</td><td>21.14</td></tr>
+                <tr class="group-row"><td colspan="8">Reinforcement Learning-based General Segmentation MLLMs</td></tr>
+                <tr><td>Seg-Zero</td><td>Gen</td><td>33.28</td><td>30.56</td><td>15.86</td><td>14.75</td><td>33.28</td><td>25.55</td></tr>
+                <tr><td>Seg-R1-3B</td><td>Gen</td><td>37.72</td><td>30.76</td><td>21.17</td><td>21.97</td><td>27.23</td><td>27.77</td></tr>
+                <tr><td>Seg-R1-7B</td><td>Gen</td><td>41.47</td><td>40.08</td><td class="best">29.86</td><td class="best">28.40</td><td>34.94</td><td>34.95</td></tr>
+                <tr class="ours-row"><td>EARL (Ours)</td><td>Ego</td><td class="best">52.30</td><td class="best">62.44</td><td>19.10</td><td>20.57</td><td>22.85</td><td class="best">38.21 <span class="gain">(+0.58)</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="table-caption"><strong>Table 2.</strong> Out-of-distribution grounding comparison on EgoHOS.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container text-block">
+        <h2>Method</h2>
+        <p>
+          EARL follows an analysis-guided coarse-to-fine design. The first stage produces a global interaction descriptor from the egocentric scene, while the second stage uses the descriptor as a semantic prior for query-specific answer generation and mask prediction.
+        </p>
+        <p>
+          The key component is the <strong>Analysis-guided Feature Synthesizer</strong>, which fuses interaction-level semantics with fine-grained visual features to support heterogeneous outputs including textual answers, boxes, and segmentation masks.
+        </p>
+      </div>
+      <div class="container wide">
+        <figure class="figure-card">
+          <img src="fig_3.png" alt="Analysis-guided feature fusion" loading="lazy">
+          <figcaption>
+            <strong>Figure 3.</strong> Feature fusion design in EARL. The Analysis-guided Feature Synthesizer injects global interaction analysis into fine-grained response generation.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section soft-bg">
+      <div class="container text-block center">
+        <h2>Ablation and Training Design</h2>
+        <p class="lead">
+          The ablation study shows that both reinforcement learning and the Analysis-guided Feature Synthesizer are important for the final performance, especially for pixel grounding.
+        </p>
+      </div>
+      <div class="container table-wide">
+        <div class="table-card">
+          <div class="table-scroll">
+            <table class="result-table compact">
+              <thead>
+                <tr><th colspan="2">Method</th><th colspan="2">Analysis</th><th colspan="2">Answering</th><th>Grounding</th></tr>
+                <tr><th>Train</th><th>Fusion</th><th>M</th><th>C</th><th>M</th><th>C</th><th>cIoU</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>SFT</td><td>--</td><td>0.538</td><td>1.421</td><td>0.362</td><td>2.339</td><td>32.47</td></tr>
+                <tr><td>SFT</td><td>AFS</td><td>0.540</td><td>1.457</td><td>0.498</td><td>4.313</td><td>43.85</td></tr>
+                <tr><td>RL</td><td>--</td><td>0.370</td><td>0.927</td><td>0.441</td><td>2.703</td><td>39.81</td></tr>
+                <tr><td>RL</td><td>Concat</td><td>0.398</td><td>1.132</td><td>0.443</td><td>2.715</td><td>39.88</td></tr>
+                <tr><td>RL</td><td>Sum</td><td>0.449</td><td>1.378</td><td>0.674</td><td>2.807</td><td>37.14</td></tr>
+                <tr><td>RL</td><td>MLP</td><td>0.371</td><td>1.290</td><td>0.412</td><td>2.701</td><td>37.29</td></tr>
+                <tr><td>RL</td><td>CAF</td><td>0.502</td><td>1.487</td><td>0.790</td><td>5.241</td><td>52.36</td></tr>
+                <tr class="ours-row"><td>RL</td><td>AFS</td><td class="best">0.542</td><td class="best">1.522</td><td class="best">0.939</td><td class="best">6.682</td><td class="best">65.48</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="table-caption"><strong>Table 3.</strong> Ablation study on the Ego-IRGBench test set.</div>
+        </div>
+      </div>
+
+      <div class="container table-wide">
+        <div class="table-card">
+          <div class="table-scroll">
+            <table class="result-table compact">
+              <thead>
+                <tr><th>#</th><th>λ<sub>f</sub></th><th>λ<sub>a</sub></th><th>λ<sub>g</sub></th><th>Ana. M</th><th>Ana. C</th><th>Ans. M</th><th>Ans. C</th><th>cIoU</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>1</td><td>1</td><td>1</td><td>0</td><td>0.539</td><td>1.518</td><td>0.926</td><td>6.380</td><td>37.99</td></tr>
+                <tr><td>2</td><td>1</td><td>0</td><td>1</td><td>0.541</td><td>1.520</td><td>0.852</td><td>4.862</td><td>58.22</td></tr>
+                <tr><td>3</td><td>0.5</td><td>1</td><td>1</td><td>0.539</td><td>1.520</td><td>0.921</td><td>6.356</td><td class="best">69.87</td></tr>
+                <tr class="ours-row"><td>4</td><td>1</td><td>1</td><td>1</td><td class="best">0.542</td><td class="best">1.522</td><td class="best">0.939</td><td class="best">6.682</td><td>65.48</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="table-caption"><strong>Table 4.</strong> Hyperparameter study on the Ego-IRGBench test set.</div>
+          <p class="note">Although setting λ<sub>f</sub>=0.5 gives the highest grounding cIoU in this sweep, λ<sub>f</sub>=λ<sub>a</sub>=λ<sub>g</sub>=1 is used as the balanced setting for analysis, answering, and grounding.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container text-block">
+        <h2>Inference Case Comparison</h2>
+        <p>
+          EARL produces both textual reasoning outputs and pixel-level grounding masks, enabling direct comparison with previous MLLM and RL-based grounding methods in egocentric interaction scenarios.
+        </p>
+      </div>
+      <div class="container wide">
+        <figure class="figure-card">
+          <img src="fig_4.png" alt="Inference case comparison visualization" loading="lazy">
+          <figcaption>
+            <strong>Figure 4.</strong> Visualization results on Ego-IRGBench. EARL provides query-oriented answers with more accurate pixel grounding in egocentric interaction scenes.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section soft-bg">
+      <div class="container text-block center">
+        <h2>Additional Model Inference Cases</h2>
+        <p class="lead">
+          Supplementary visualizations showing additional EARL inference cases.
+        </p>
+      </div>
+      <div class="container gallery">
+        <figure class="figure-card small-card">
+          <img src="supp_fig_1.png" alt="EARL supplementary inference case 1" loading="lazy">
+          <figcaption><strong>Supplementary Figure 1.</strong> Additional model inference case.</figcaption>
+        </figure>
+        <figure class="figure-card small-card">
+          <img src="supp_fig_2.png" alt="EARL supplementary inference case 2" loading="lazy">
+          <figcaption><strong>Supplementary Figure 2.</strong> Additional model inference case.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container text-block">
+        <h2>BibTeX</h2>
+        <pre class="bibtex"><code>@article{su2026earl,
+  title={EARL: Towards a Unified Analysis-Guided Reinforcement Learning Framework for Egocentric Interaction Reasoning and Pixel Grounding},
+  author={Su, Yuejiao and Zhang, Xinshen and Ye, Zhen and Yao, Lei and Chau, Lap-Pui and Wang, Yi},
+  journal={arXiv preprint arXiv:2605.14742},
+  year={2026}
+}</code></pre>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container narrow center">
+      <p>
+        This project page follows a clean academic project page layout, with visual structure inspired by DINO-R1.
+      </p>
+    </div>
+  </footer>
+
+  <script src="static/js/main.js"></script>
+</body>
+</html>

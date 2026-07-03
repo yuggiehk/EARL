@@ -1,0 +1,17 @@
+{
+  "title": "EARL: Towards a Unified Analysis-Guided Reinforcement Learning Framework for Egocentric Interaction Reasoning and Pixel Grounding",
+  "venue": "ICML 2026",
+  "arxiv": "https://arxiv.org/abs/2605.14742",
+  "paper_pdf": "https://arxiv.org/pdf/2605.14742",
+  "code": "https://github.com/yuggiehk/EARL",
+  "local_pdf": "example_paper.pdf",
+  "style_reference": "https://christinepan881.github.io/DINO-R1/",
+  "figures_expected": {
+    "fig_1.png": "performance radar chart",
+    "fig_2.png": "overall EARL architecture",
+    "fig_3.png": "feature fusion / AFS figure",
+    "fig_4.png": "inference case comparison visualization",
+    "supp_fig_1.png": "model inference case",
+    "supp_fig_2.png": "model inference case"
+  }
+}
