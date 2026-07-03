@@ -14,14 +14,6 @@
   <img src="assets/fig_1.png" width="50%" alt="Radar chart comparison on Ego-IRGBench" />
 </p>
 
-<p align="center">
-  <img src="assets/fig_2.png" width="95%" alt="EARL Architecture Overview" />
-</p>
-
-<p align="center">
-  <img src="assets/fig_3.png" width="70%" alt="AFS Architecture" />
-</p>
-
 ## 🔥 News
 
 - **[2026.05]** EARL is accepted at **ICML 2026**!
@@ -46,7 +38,15 @@ EARL adopts a **coarse-to-fine** design:
 1. **Coarse-grained Interpretation** — Generates holistic textual descriptions of egocentric interactions using Qwen2.5-VL-3B.
 2. **Fine-grained Response** — Produces textual answers and pixel-level grounding masks via Qwen2.5-VL-7B + SAM2, optimized with GRPO.
 
+<p align="center">
+  <img src="assets/fig_2.png" width="95%" alt="EARL Architecture Overview" />
+</p>
+
 To bridge the two stages, we introduce the **Analysis-guided Feature Synthesizer (AFS)**, which extracts a *global interaction descriptor* from the interpretation stage and injects it as a semantic prior into the response stage.
+
+<p align="center">
+  <img src="assets/fig_3.png" width="70%" alt="AFS Architecture" />
+</p>
 
 
 ## 🏗️ Project Structure
