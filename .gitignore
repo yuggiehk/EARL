@@ -1,0 +1,82 @@
+# Byte-compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+eggs/
+.eggs/
+*.egg-info/
+*.egg
+
+# Virtual environments
+venv/
+.venv/
+env/
+.env
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Model checkpoints (large files)
+checkpoints/
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.ckpt
+
+# Output data
+outputs/*.json
+outputs/*.jsonl
+outputs/*.csv
+outputs/*.log
+outputs/*.png
+outputs/*.npz
+outputs/*.jar
+
+# SAM2 (separate repo)
+sam2/
+
+# Training logs
+*.log
+
+# WandB
+wandb/
+
+# DeepSpeed configs
+deepspeed_*.json
+
+# Pip / Conda
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+.hypothesis/
+
+# Pyre type checker
+.pyre/
+
+# macOS
+.DS_Store

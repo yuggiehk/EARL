@@ -1,0 +1,44 @@
+# Core ML
+torch>=2.5.1
+transformers==4.49.0
+trl==0.17.0
+accelerate>=1.2.1
+peft>=0.14.0
+
+# Vision
+pillow>=10.0.0
+opencv-python>=4.8.0
+torchvision>=0.18.0
+
+# DeepSpeed
+deepspeed==0.15.4
+
+# Data
+datasets>=3.2.0
+safetensors>=0.3.3
+
+# Evaluation
+nltk>=3.8.0
+pycocoevalcap>=1.2
+Levenshtein>=0.25.0
+math-verify>=0.5.0
+
+# Training utilities
+wandb>=0.19.1
+einops>=0.8.0
+sentencepiece>=0.1.99
+liger_kernel==0.5.2
+bitsandbytes>=0.43.0
+
+# API & Distillation
+openai>=1.0.0
+distilabel[vllm,ray,openai]>=1.5.2
+vllm==0.6.6.post1
+
+# Hub
+huggingface-hub[cli]>=0.19.2,<1.0
+hf_transfer>=0.1.4
+
+# SAM2 (for grounding evaluation)
+# Install separately:
+#   cd sam2 && pip install -e .
