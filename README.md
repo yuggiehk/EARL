@@ -2,7 +2,7 @@
 
 [![arXiv](https://img.shields.io/badge/arXiv-2605.14742-b31b1b.svg)](https://arxiv.org/abs/2605.14742)
 [![ICML 2026](https://img.shields.io/badge/ICML-2026-blue)](https://icml.cc/)
-[![Project Page](https://img.shields.io/badge/Project-Page-green)](https://github.com/yuggiehk/EARL)
+[![Project Page](https://img.shields.io/badge/Project-Page-green)](https://yuggiehk.github.io/EARL/)
 
 > **EARL: Towards a Unified Analysis-Guided Reinforcement Learning Framework for Egocentric Interaction Reasoning and Pixel Grounding**
 >
@@ -83,7 +83,7 @@ earl/
 
 ```bash
 # Clone the repository
-git clone https://github.com/yuggiehk/EARL.git
+git clone https://yuggiehk.github.io/EARL/.git
 cd EARL
 
 # Install dependencies
