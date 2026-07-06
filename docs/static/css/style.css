@@ -81,7 +81,8 @@ p { margin: 0 0 16px; }
   line-height: 1.7;
 }
 .authors sup, .affiliations sup { color: var(--muted); font-size: 0.65em; }
-.affiliations { margin: 0 auto 24px; color: var(--muted); font-size: 16px; }
+.affiliations { margin: 0 auto 8px; color: var(--muted); font-size: 16px; }
+.equal-note { margin: 0 auto 24px; color: var(--muted); font-size: 15px; }
 .button-row {
   display: flex;
   flex-wrap: wrap;

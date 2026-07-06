@@ -6,7 +6,7 @@
 
 > **EARL: Towards a Unified Analysis-Guided Reinforcement Learning Framework for Egocentric Interaction Reasoning and Pixel Grounding**
 >
-> Yuejiao Su, Xinshen Zhang, Zhen Ye, Lei Yao, Lap-Pui Chau, Yi Wang
+> [**Yuejiao Su**](https://dblp.org/pid/292/4226.html)<sup>* 1</sup>,[**Xinshen Zhang**](https://scholar.google.com/citations?user=KsiOuO0AAAAJ&hl=zh-CN)<sup>* 1</sup>,[**Zhen Ye**](https://github.com/zhenye234)<sup>2</sup>,[**Lei Yao**](https://rayyoh.github.io/)<sup>1</sup>,[**Lap-Pui Chau**](https://www.eie.polyu.edu.hk/~lpchau/)<sup>1</sup>,[**Yi Wang**](https://wangyintu.github.io/)<sup>† 1</sup><sup>*</sup> Equal contribution.  <sup>†</sup> Corresponding author.  <sup>1</sup> The Hong Kong Polytechnic University  <sup>2</sup> The Hong Kong University of Science and Technology
 >
 > *International Conference on Machine Learning (ICML), 2026*
 
